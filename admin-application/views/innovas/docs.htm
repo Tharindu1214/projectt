@@ -1,0 +1,897 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link href="styles/simple.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        h1, h2, h3 {text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);}
+        h2 {text-transform:uppercase}
+        h3 {font-size:14px;color:#a90000;border-bottom:#000000 1px dotted;}
+    </style>
+
+</head>
+<body style="margin:50px;">
+
+<a href="default.htm">Default Example</a> | <a href="default_full.htm">More Examples</a> | Documentation | <a href="docs_aspnet.htm">ASP.NET Documentation</a> | <a href="default_aspnet.aspx">ASP.NET Example</a>
+
+<h2>Documentation</h2>
+
+<h3>Usage</h3>
+<p>1. Include the Editor script file (in the <b>&lt;head&gt;</b> section of your web page).</p>
+<pre>
+        &lt;script language="javascript" type="text/javascript" src='scripts/innovaeditor.js'>&lt;/script>
+</pre>
+
+<p>2. <b>[Optional]</b>  Include Google Font integration scripts (This section is required only if using Google Fonts Dialog or if <b>FontDialog</b> or <b>CompleteTextDialog</b> buttons is used.</p>
+<pre>
+        &lt;script src="scripts/common/jquery-1.7.min.js" type="text/javascript">&lt;/script>
+        &lt;script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js" type="text/javascript">&lt;/script>
+        &lt;script src="scripts/common/webfont.js" type="text/javascript">&lt;/script>
+</pre>
+
+<p>3. Initialize the Editor below any <b>&lt;textarea&gt;</b> you’d like to replace.</p>
+
+<pre>
+        &lt;textarea id="txtContent" rows="4" cols="30"></textarea>
+
+        &lt;script language="javascript" type="text/javascript">
+            var oEdit1 = new InnovaEditor("oEdit1");
+
+            /*Apply stylesheet for the editing content*/
+            oEdit1.css = "styles/simple.css";
+
+            /*Render the editor*/
+            oEdit1.REPLACE("txtContent");
+        &lt;/script>
+</pre>
+
+<h3>Initialize Editor After Page Load (AJAX)</h3>
+<p>You can load editor from a function after page is completely loaded (AJAX).</p>
+
+<p>1. Define a div or container element, assign an ID to it. This will be placeholder for editor, where editor will be rendered.</p>
+<p>2. Pass the id of the placeholder as second parameter in REPLACE function.</p>
+
+<pre>
+		oEdit1.REPLACE("textareaid", "div id");
+</pre>
+
+<p>For example:</p>
+
+<pre>
+		&lt;div id="myEditor">&lt;/div>
+		oEdit1.REPLACE("textarea id", "myEditor");
+</pre>
+
+<p>
+Note that for this to work, the <strong>oEdit1</strong> variable must be declared in page scope. It will not work if you declare the variable in a function.
+If you load the editor inside a function, you have to add the variable reference to browser's window object:
+</p>
+
+<pre>
+		window["oEdit1"] = new InnovaEditor("oEdit1");
+		window["oEdit1"].REPLACE("textarea id", "myEditor");
+</pre>
+
+<h3>Submit/Save Editor Content</h3>
+<p>Editor is implemented as textarea replacement, it submits content through the already defined &lt;textarea&gt;.
+Getting editor content on server side is just like regular form processing since content is submitted throught &lt;textarea&gt;.
+You just need to get the content from HTTP post variable and save it to file or database.
+</p>
+
+
+<h3>Publishing Content</h3>
+<p>
+When you display/publish your content result anywhere on your web sites, please include the following:</p>
+
+<p>1. Include the css file that you defined for editing content (using oEdit1.css = "styles/default.css").</p>
+<pre>
+        &lt;link href="styles/default.css" rel="stylesheet" type="text/css" />
+</pre>
+
+<p>2. <b>[Optional]</b> Include Google Font integration scripts (This section is required only if using Google Fonts Dialog or if <b>FontDialog</b> or <b>CompleteTextDialog</b> buttons is used).</p>
+<pre>
+        &lt;script src="scripts/common/jquery-1.7.min.js" type="text/javascript">&lt;/script>
+        &lt;script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js" type="text/javascript">&lt;/script>
+        &lt;script src="scripts/common/webfont.js" type="text/javascript">&lt;/script>
+</pre>
+
+<h3>Using File Browser</h3>
+<p>
+
+        FILE BROWSER/MANAGER IS A FREE ADD-ON INCLUDED IN INNOVASTUDIO LIVE EDITOR PACKAGE (in <b>/AddOns/assetmanager/</b> folder - You can copy this folder anywhere on your site).
+        SINCE IT IS A STANDALONE APPLICATION AND CAN BE ACCESSED DIRECTLY FROM BROWSER, 
+        YOU WILL NEED TO SECURE IT BY ADDING USER CHECK/AUTHENTICATION TO:<br /><br />
+
+	        - assetmanager/asset.[aspx/asp/php]<br /><br />
+
+        SECURITY CHECK MUST ALSO BE ADDED TO OTHER FILES IN FILE BROWSER FOLDER SUCH AS:<br /><br />
+
+	        - assetmanager/server/delfile.[ashx/asp/php]<br />
+	        - assetmanager/server/delfolder.[ashx/asp/php]<br />
+	        - assetmanager/server/newfolder.[ashx/asp/php]<br />
+	        - assetmanager/server/upload.[ashx/asp/php]  <br /><br />
+
+</p>
+<p>
+To enable custom file browser in the Image & Link dialogs, use <b>fileBrowser</b> property.</p>
+<pre>
+        oEdit1.fileBrowser = "/assetmanager/asset.php";
+</pre>
+Or
+<pre>
+        oEdit1.fileBrowser = "/assetmanager/asset.asp";
+</pre>
+Or
+<pre>
+        oEdit1.fileBrowser = "/assetmanager/asset.aspx";
+</pre>
+
+<p>
+To specify folder location to browse, set the <b>base</b> variable (in asset.php, asset.asp or asset.apsx):
+</p>
+<pre>
+        var base = "/images";
+</pre>
+
+<p>
+To disable the Upload & Delete files and Create & Delete folders features, set the <b>readonly</b> variable to <b>true</b> (in asset.php, asset.asp or asset.apsx):
+</p>
+<pre>
+        var readonly = true;
+</pre>
+
+<p>
+Some applications require File Browser that returns full file path (eg. in Newsletter editing, etc). To enable full file path feature, set the <b>fullpath</b> variable to <b>true</b> (in asset.php, asset.asp or asset.apsx):
+</p>
+<pre>
+        var fullpath = true;
+</pre>
+
+<h3>Upload File Types</h3>
+
+<p>
+To set allowed file types for upload:
+</p>
+
+<p>For <strong>PHP</strong> version, in <strong>assetmanager/onfig.php</strong></p>
+
+<pre>
+	define("UPLOAD_FILE_TYPES", "jpg|jpeg|gif|png|txt|pdf|zip");
+</pre>
+
+<p>For <strong>Classic ASP</strong> version, in <strong>assetmanager/server/upload.asp</strong></p>
+
+<pre>
+	UploadifyObject.allowedTypes = "jpg|jpeg|gif|png|txt|pdf|zip"
+</pre>
+
+<p>Allowed file types/extensions are separated by pipe (|) character, without space. Use empty string to allow all file types.</p>
+
+<h3>Configure Toolbar</h3>
+
+<p>Live Editor support tabs and group toolbar. To set toolbar mode</p>
+
+<pre>
+	oEdit1.toolbarMode = 1;
+</pre>
+
+<p>
+	Possible values are (2 is default):
+	<ul>
+		<li>1 - Tab and group</li>
+		<li>2 - Group only</li>
+		<li>3 - Group (flow)</li>
+	</ul>
+</p>
+
+<p>Use <strong>tabs</strong> and <strong>groups</strong> property to configure toolbar buttons. Here is editor's default tabs and groups configuration.</p>
+<pre>
+	oEdit1.tabs = [
+		["tabHome", "Home", ["group1", "group2", "group4"]],
+		["tabStyle", "Insert", ["group3"]]
+		];
+
+	oEdit1.groups = [
+		["group1", "", ["Bold", "Italic", "Underline", "FontDialog", "ForeColor", "TextDialog", "RemoveFormat"]],
+		["group2", "", ["Bullets", "Numbering", "JustifyLeft", "JustifyCenter", "JustifyRight"]],
+		["group3", "", ["LinkDialog", "ImageDialog", "TableDialog"]],
+		["group4", "", ["Undo", "Redo", "FullScreen", "SourceDialog"]]
+		];
+</pre>
+
+<p>
+  The format of <strong>tabs</strong> property is
+</p>
+<pre>
+  oEdit1.tabs= [
+  		[Tab 1 id, Tab name, [List of group id]],
+  		[Tab 2 id, Tab name, [List of group id]],
+  		[Tab n id, Tab name, [List of group id]]
+  		]
+</pre>
+
+<p>
+  The format of <strong>groups</strong> property is
+</p>
+<pre>
+  oEdit1.groups=[
+  		[Group 1 id, Group name, [List of buttons]],
+  		[Group 2 id, Group name, [List of buttons]],
+  		[Group n id, Group name, [List of buttons]]
+  		]
+</pre>
+
+
+<h3>List of Available Toolbar Buttons</h3>
+
+<ul>
+<li>Bold</li>
+<li>Italic</li>
+<li>Underline</li>
+<li>Strikethrough</li>
+<li>Superscript</li>
+<li>Subscript</li>
+<li>ForeColor</li>
+<li>BackColor</li>
+<li>RemoveFormat</li>
+<li>Paragraph</li>
+<li>FontName</li>
+<li>FontSize</li>
+<li>FontDialog</li>
+<li>TextDialog</li>
+<li>CompleteTextDialog</li>
+<li>Quote</li>
+<li>Styles <i>(Style Selection)</i></li>
+<li>JustifyLeft</li>
+<li>JustifyCenter</li>
+<li>JustifyRight</li>
+<li>JustifyFull</li>
+<li>Bullets</li>
+<li>Numbering</li>
+<li>Indent</li>
+<li>Outdent</li>
+<li>Table</li>
+<li>TableDialog</li>
+<li>FlashDialog</li>
+<li>LinkDialog</li>
+<li>ImageDialog</li>
+<li>YoutubeDialog</li>
+<li>CharsDialog <i>(Special Characters Dialog)</i></li>
+<li>SearchDialog</li>
+<li>SourceDialog <i>(HTML Editor Dialog)</i></li>
+<li>Emoticons</li>
+<li>Line</li>
+<li>InternalLink <i>(Custom)</i></li>
+<li>CustomObject <i>(Custom)</i></li>
+<li>CustomTag <i>(Custom)</i></li>
+<li>Undo</li>
+<li>Redo</li>
+<li>FullScreen</li>
+<li>BRK <i>(Line Break)</i></li>
+<li>RTL</li>
+<li>LTR</li>
+</ul>
+
+
+<h3>Adding Custom Button and Dropdown Button</h3>
+<p>
+You can add your own custom buttons using <b>arrCustomButtons</b> property. Each button should have the following format:</p>
+<p>
+<strong>["Button name", "Action", "Title/Tooltips", "Icon file", "Icon width", Dropdownitems]</strong>
+</p>
+
+<ul>
+	<li>Button name</li>
+	<li>Action when clicked, note that the action will be executed using javascript eval() function</li>
+	<li>Title (tooltip)</li>
+	<li>Icon file name</li>
+  	<li>icon width, specify icon width, default value is 0 (editor icon standard width). Specify this value if you have custom icon file with non standard witdh.</li>
+	<li>dropdownitems, array of dropdown items with the following format:<br />
+		<p>
+		<strong>["dropdown id", "action, to be executed by eval()", "dropdown text here..."]</strong>
+		</p>
+	</li>
+
+</ul>
+<p>Example:</p>
+<pre>
+
+	//standard custom button
+	oEdit1.arrCustomButtons.push(["MyCustomButton", "alert('Custom Command here..')", "Caption..", "btnCustom1.gif"]);
+
+	//dropdown butto
+	var dropdownItems = [
+		["dropdown id", "action here, to be executed by eval()", "dropdown text here..."],
+		["dropdown1", "alert('test');", "Dropdown Item 1"],
+		["dropdown2", "modalDialog('somedialog1.htm',500,223,'My Dialog1');", "Dropdown Item 2"],
+		["dropdown3", "modalDialog('somedialog2.htm',800,453,'My Dialog2');", "Dropdown Item 3"]
+	];
+	oEdit1.arrCustomButtons.push(["MyDropdownButton", "", "Caption..", "btnCustom2.gif", 0, <strong>dropdownItems</strong>]);
+
+	oEdit1.groups = [
+		["group1", "", ["Bold", "Italic", "Underline", "FontDialog", "ForeColor", "TextDialog", "RemoveFormat"]],
+		["group2", "", ["Bullets", "Numbering", "JustifyLeft", "JustifyCenter", "JustifyRight"]],
+		["group3", "", ["LinkDialog", "ImageDialog", "TableDialog", "<span style="color:#c90000">MyCustomButton</span>", "<span style="color:#c90000">MyDropdownButton</span>"]],
+		["group4", "", ["Undo", "Redo", "FullScreen", "SourceDialog"]]
+	];
+</pre>
+Button image file is located in <b>scripts/icons/</b> folder. Use <b>btnCustom1.gif</b>, <b>btnCustom2.gif</b>, .. or create your own button image.
+
+
+<h3>Adding Custom Tags Insertion</h3>
+<p>
+With this feature, you can insert predefined custom tags into the current Editor content.
+Custom Tag insertion is a feature that is commonly used in mailing applications or template editing in web content management systems.
+</p>
+<pre>
+        oEdit1.groups = [
+            ["group1", "", ["Bold", "Italic", "Underline", "FontDialog", "ForeColor", "TextDialog", "RemoveFormat"]],
+            ["group2", "", ["Bullets", "Numbering", "JustifyLeft", "JustifyCenter", "JustifyRight"]],
+            ["group3", "", ["LinkDialog", "ImageDialog", "TableDialog", "<span style="color:#c90000">CustomTag</span>"]],
+            ["group4", "", ["Undo", "Redo", "FullScreen", "SourceDialog"]]
+            ];
+
+        oEdit1.arrCustomTag = [["First Name", "{%first_name%}"],
+            ["Last Name", "{%last_name%}"],
+            ["Email", "{%email%}"]];
+</pre>
+
+<h3>Adding "InternalLink" & "CustomObject" buttons</h3>
+<p>
+This buttons are commonly used in CMS application to open file browser, internal page links, etc.
+To open your own custom page, use <b>modalDialog</b> method.
+</p>
+<pre>
+        oEdit1.groups = [
+            ["group1", "", ["Bold", "Italic", "Underline", "FontDialog", "ForeColor", "TextDialog", "RemoveFormat"]],
+            ["group2", "", ["Bullets", "Numbering", "JustifyLeft", "JustifyCenter", "JustifyRight"]],
+            ["group3", "", ["LinkDialog", "ImageDialog", "TableDialog"]],
+            ["group4", "", ["<span style="color:#c90000">InternalLink</span>", "<span style="color:#c90000">CustomObject</span>"]],
+            ["group5", "", ["Undo", "Redo", "FullScreen", "SourceDialog"]]
+            ];
+
+        oEdit1.cmdInternalLink = "modalDialog('links.htm',365,270)"; //Command to open your custom link browser.
+        oEdit1.cmdCustomObject = "modalDialog('objects.htm',365,270)"; //Command to open your custom file browser.
+</pre>
+
+<h3>Inserting HTML Content into the Editor</h3>
+<p>
+To insert custom html from your own custom page (opened using <b>modalDialog</b> method), use <b>insertHTML</b>.
+</p>
+<pre>
+        var sHTML = "&lt;p>Best Wishes&lt;/p>";
+        var obj = parent.oUtil.obj;
+        obj.insertHTML(sHTML);
+</pre>
+
+<h3>Editing Mode</h3>
+<p>
+To enable full html editing, set <b>mode</b> property to "XHTML". The default value is "XHTMLBody" (for editing body content only).
+</p>
+<pre>
+        oEdit1.mode = "XHTML";
+</pre>
+
+
+<h3>Loading Content at Runtime</h3>
+<p>
+InnovaStudio Live Editor allows you to load content at runtime, which will replace the current Editor content.
+Use putHTML() method to load full HTML content. The syntax is:
+</p>
+<pre>
+        oEdit1.putHTML(sHTML);
+</pre>
+where sHTML is the full HTML content. Note that putHTML() will also replace the current content style (defined by css property).
+
+<p>
+Use loadHTML() method to load HTML Body content. The syntax is:
+</p>
+<pre>
+        oEdit1.loadHTML(sHTML);
+</pre>
+where sHTML is the HTML Body content.
+
+<h3>Getting the Current Content</h3>
+<p>
+InnovaStudio Live Editor allows you to get/read the current Editor content.
+Use getXHTML() method to get full HTML content. The syntax is:
+</p>
+<pre>
+        oEdit1.getXHTML();
+</pre>
+<p>
+Use getXHTMLBody() method to get HTML Body content. The syntax is:
+</p>
+<pre>
+        oEdit1.getXHTMLBody();
+</pre>
+
+
+<h3>Inserting &lt;DIV>, &lt;P> or &lt;BR> when pressing Enter Key</h3>
+<p>
+You can configure the editor to insert &lt;DIV>, &lt;P> or &lt;BR> when pressing enter key.
+</p>
+<pre>
+        oEdit1.returnKeyMode = 1;
+</pre>
+<p>
+Possible values are:
+</p>
+<ul>
+    <li>0: follow browser default.
+    With this option, tag inserted when pressing Enter key is depending on browser.
+    IE8 and lower will insert P and IE9 insert DIV. Firefox always insert BR while Chrome/Safari inserts DIV.</li>
+    <li>1: always insert DIV (default)</li>
+    <li>2: always insert BR</li>
+    <li>3: always insert P</li>
+</ul>
+
+<h3>MS Word Cleaning and Paste Text</h3>
+<p>
+By default, when user paste content into editing panel (using CTRL+V), editor will clean the content and remove any non html standard tags.
+This is particullary useful for paste content from other resource like MS Word.
+</p>
+<p>
+However you can also configure editor to remove any html tags from content pasted into editor using pasteTextOnCtrlV property:
+</p>
+<pre>
+        oEdit1.pasteTextOnCtrlV = true;
+</pre>
+
+<h3>Flickr Image Configuration</h3>
+<p>
+To enable Flickr Image browser:
+</p>
+<pre>
+        oEdit1.enableFlickr = true;
+</pre>
+<p>
+To configure default Flickr Image to browse, specify Flickr Username:
+</p>
+<pre>
+        oEdit1.flickrUser = "USERNAME";
+</pre>
+
+<h3>Enable/Disable Tabs and Other Options</h3>
+<p>
+To enable Styles tab in the Link Dialog:
+</p>
+<pre>
+        oEdit1.enableCssButtons = true;
+</pre>
+
+<p>
+To disable Styles Tab in Image Dialog:
+</p>
+<pre>
+        oEdit1.enableImageStyles = false;
+</pre>
+
+<p>
+To enable Table Autoformat in the Table Dialog:
+</p>
+<pre>
+        oEdit1.enableTableAutoformat = true;
+</pre>
+<p>
+To disable Google Fonts, remove "FontDialog" from the toolbar configuration, and add "FontName" (for normal font dropdown):
+</p>
+<pre>
+        oEdit1.groups = [
+            ["group1", "", ["Bold", "Italic", "Underline", <span style="color:#c90000">"FontName"</span>, "ForeColor", "TextDialog", "RemoveFormat"]],
+            ["group2", "", ["Bullets", "Numbering", "JustifyLeft", "JustifyCenter", "JustifyRight"]],
+            ["group3", "", ["LinkDialog", "ImageDialog", "TableDialog"]],
+            ["group4", "", ["InternalLink", "CustomObject"]],
+            ["group5", "", ["Undo", "Redo", "FullScreen", "SourceDialog"]]
+            ];
+</pre>
+
+<p>
+To enable "Open in a Lightbox" in the Link & Image Dialog:
+</p>
+<pre>
+        oEdit1.enableLightbox = true;
+</pre>
+<p>Then please find FancyBox script in <b>/AddOns/fancybox13/</b> folder in the package and copy the folder into <b>scripts/common/</b> (or anywhere on your site).<br />
+Include the FancyBox script into your page (where your content is published) using:</p>
+<pre>
+        &lt;script src="scripts/common/fancybox13/jquery.easing-1.3.pack.js" type="text/javascript">&lt;/script>
+        &lt;script src="scripts/common/fancybox13/jquery.mousewheel-3.0.2.pack.js" type="text/javascript">&lt;/script>
+        &lt;script src="scripts/common/fancybox13/jquery.fancybox-1.3.1.pack.js" type="text/javascript">&lt;/script>
+        &lt;link href="scripts/common/fancybox13/jquery.fancybox-1.3.1.css" rel="stylesheet" type="text/css" />
+        &lt;script language="javascript" type="text/javascript">
+            $(document).ready(function () {
+                $('a[rel=lightbox]').fancybox();
+            });
+        &lt;/script>
+</pre>
+(Note that JQuery is required)
+
+<h3>Localization</h3>
+<p>
+You can localize the Editor to be displayed in specific language by adding a language include file before the Editor javascript include, for example:
+</p>
+<pre>
+    &lt;script language="Javascript" src="<span style="color:#c90000">scripts/language/da-DK/editor_lang.js</span>">&lt;/script>
+    &lt;script language="Javascript" src="scripts/innovaeditor.js">&lt;/script>
+</pre>
+<p>
+The current available language files are located in folder <b>scripts/language/</b>.  If no language file specified, English version will be used.
+</p>
+<p>
+<b>Note: </b>
+<ul>
+<li>Most of the available translations are not complete yet. </li>
+<li>To translate the Editor into your language, open & edit language files in folder: <br />
+- scripts\language\<br />
+- scripts\common\language\
+</li>
+</ul>
+</p>
+
+<h3>Special Characters</h3>
+<p>
+Editor by default replace several special characters with entity code.
+<ul>
+ <li>&amp;copy;</li>
+ <li>&amp;pound;</li>
+ <li>&amp;reg;</li>
+ <li>&amp;eacute;</li>
+ <li>&amp;Eacute;</li>
+ <li>&amp;euro</li>
+ <li>and &#8220; replaced with "</li>
+</ul>
+The list is defined in <strong>oUtil.spcCharCode</strong> property. You can override this property using new <strong>oEdit1.loadSpecialCharCode()</strong> function, for example:
+</p>
+<pre>
+    &lt;script language="Javascript">
+    	oEdit1.loadSpecialCharCode([[169, "&amp;copy;"], [163, "&amp;pound;"], [174, "&amp;reg;"], [233, "&amp;eacute;"], [201, "&amp;Eacute;"], [8364, "&amp;euro;"], [8220, "\""]]);
+    &lt;/script>
+</pre>
+
+<h3>Editing CSS/External Stylesheet</h3>
+<p>
+	You can assign one or more external stylesheets for editing in editor.
+</p>
+<pre>
+    oEdit1.css = "/styles/file.css";
+</pre>
+<p>or use array for multiple files</p>
+<pre>
+    oEdit1.css = ["/styles/file1.css","/styles/file2.css","/styles/file3.css"];
+</pre>
+<p>Note that path to css file should be relative to root (relative to website root).</p>
+
+<h3>Filtering CSS Rules for Style Selector</h3>
+<p>
+	You may not want all rules in your external stylesheet (editing style) to be listed and available for user in Style Selector.
+	To do this, set <strong>oEdit1.styleSelectorPrefix</strong> property, this force editor to display only class rules with the specified prefix.
+	For example:
+</p>
+<pre>
+    &lt;script language="Javascript">
+    	oEdit1.styleSelectorPrefix = "is_";
+    &lt;/script>
+</pre>
+<p>
+This make editor list only rules started with ".is_" such as .is_title{}, .is_heading{}. By default this property is empty, which mean all
+rules will be listed. It is possible to specify multiple prefixes, each value should be comma separated withtout space in between.
+</p>
+<pre>
+    &lt;script language="Javascript">
+    	oEdit1.styleSelectorPrefix = "is_,ic_,bb_";
+    &lt;/script>
+</pre>
+
+<h3>Properties and Functions Reference</h3>
+
+<p>Below are list of Live Editor properties and functions</p>
+
+<p><strong>1. Editor properties</strong></p>
+<table cellpadding="5" cellspacing="5" border="1">
+  <tr>
+  	<td>Name</td>
+  	<td>Description</td>
+  </tr>
+  <tr>
+  	<td>width</td><td>Set editor width for example oEdit1.width="750px"</td>
+  </tr>
+  <tr>
+  	<td>height</td><td>Set editor width for example oEdit1.height="350px"</td>
+  </tr>
+  <tr>
+   	<td>publishingPath</td><td>Set document publishingPath.</td>
+  </tr>
+  <tr>
+  	<td>tabs</td><td>Configure toolbar tab</td>
+  </tr>
+  <tr>
+    <td>groups</td><td>Configure toolbar button groups</td>
+  </tr>
+  <tr>
+    <td>toolbarMode</td><td>Set toolbar mode
+    <p>Possible values are:</p>
+    <ul>
+    	<li>1-Tabs&Groups toolbar</li>
+    	<li>2-Groups toolbar</li>
+    	<li>3-Flowing Groups toolbar</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>pasteTextOnCtrlV</td><td>Paste text only content into editor when using CTRL+V, default value is false</td>
+  </tr>
+  <tr>
+  	<td>fileBrowser</td><td>File browser path</td>
+  </tr>
+  <tr>
+  	<td>enableFlickr</td><td>Enable flickr tab in Image Dialog, default value is false</td>
+  </tr>
+  <tr>
+  	<td>flickrUser</td><td>Flickr user account name</td>
+  </tr>
+  <tr>
+  	<td>enableCssButtons</td><td>Enable style tab in Link Dialog, default value is false</td>
+  </tr>
+  <tr>
+  	<td>enableImageStyles</td><td>Enable style tab in Image Dialog, default value is true</td>
+  </tr>
+  <tr>
+  	<td>enableYTVideoStyles</td><td>Enable style tab in Youtube Dialog, default value is true</td>
+  </tr>
+  <tr>
+  	<td>css</td><td>Set editing stylesheet. The path should be relative to root for example:
+  	<pre>
+  	oEdit1.css = "/styles/file.css";
+  	</pre>
+  	<p>As of Live Editor v1.7, the <strong>css</strong> property allow multiple external css files for editing.</p>
+  	<pre>
+	oEdit1.css = ["/styles/file1.css","/styles/file2.css","/styles/file3.css"];
+  	</pre>
+  	<p>Note that path to css file should be relative to root (relative to website root).</p>
+  	</td>
+  </tr>
+
+  <tr>
+  	<td>arrStyle</td><td>An alternative way to set editing style using javascript array
+  	<pre>
+  	oEdit1.arrStyle = [
+  		["body",false,"","background:steelblue; color:white; font-family:Verdana,Arial,Helvetica;"],
+		["a:link",false,"","color:white; font-weight:bold;"],
+	    ["a:active",false,"","color:white; font-weight:bold;"],
+		["a:visited",false,"","color:whitesmoke;font-weight:bold;"],
+		[".CodeInText",true,"", "font-family:Courier New;font-weight:bold;"]
+	];
+  	</pre>
+  	<p>
+	<strong>arrStyle</strong> property allows you to specify the style rules (in the form of array).
+	Each rule is constructed by:
+	</p>
+
+		<ul>
+		<li>HTML/Class Selector</li>
+		<li>True/false parameter to specify whether the style will be included in the Style Selection list or not.</li>
+		<li><em>This element is preserved, should be an empty string.</em></li>
+		<li>Css Text</li>
+		</ul>
+  	</td>
+  </tr>
+  <tr>
+	<td>enableLightbox</td><td>Enable/disable 'Open in lighbox' option in Hyperlink dialog. Default is false.</td>
+  </tr>
+  <tr>
+	<td>enableTableAutoformat</td><td>Enable/disable table auto format in Table dialog., Default is true.</td>
+  </tr>
+  <tr>
+	<td>cmdInternalLink</td><td>Internal link command, this command is executed by using javascript <strong>eval()</strong> function.
+	<pre>
+	oEdit1.cmdInternalLink = "modalDialog('my_custom_dialog.htm',650,350)"; //Command to open your custom link browser.
+	</pre>
+	</td>
+  </tr>
+  <tr>
+	<td>cmdCustomObject</td><td>Custom object command, this command is executed by using javascript <strong>eval()</strong> function.
+	<pre>
+	oEdit1.cmdCustomObject = "modalDialog('my_custom_dialog.htm',650,350)"; //Command to open your custom file browser.
+	</pre>
+	</td>
+  </tr>
+  <tr>
+  	<td>arrFontName</td><td>List of font available for selection in font name dropdown. It is prepopulated with default value
+  	<pre>
+  	oEdit1.arrFontName = ["Impact, Charcoal, sans-serif", "Palatino Linotype, Book Antiqua, Palatino, serif",
+		"Tahoma, Geneva, sans-serif", "Century Gothic, sans-serif",
+		"Lucida Sans Unicode, Lucida Grande, sans-serif",
+		"Times New Roman, Times, serif", "Arial Narrow, sans-serif",
+		"Verdana, Geneva, sans-serif", "Copperplate Gothic Light, sans-serif",
+		"Lucida Console, Monaco, monospace", "Gill Sans MT, sans-serif",
+		"Trebuchet MS, Helvetica, sans-serif", "Courier New, Courier, monospace",
+		"Arial, Helvetica, sans-serif", "Georgia, Serif", "Garamond, Serif"
+	];
+  	</pre>
+  	</td>
+  </tr>
+  <tr>
+  	<td>returnKeyMode</td><td>Set the behavior when Enter is pressed.
+  	<p>
+	Possible values are:
+	</p>
+	<ul>
+	    <li>0: follow browser default.
+	    With this option, tag inserted when pressing Enter key is depending on browser.
+	    IE8 and lower will insert P and IE9 insert DIV. Firefox always insert BR while Chrome/Safari inserts DIV.</li>
+	    <li>1: always insert DIV (default)</li>
+	    <li>2: always insert BR</li>
+	    <li>3: always insert P</li>
+	</ul>
+  	</td>
+  </tr>
+  <tr>
+  	<td>useTagSelector</td><td>Enable tag selector, default value is true</td>
+  </tr>
+  <tr>
+  	<td>TagSelectorPosition</td><td>Set tag selector position, possible values are <strong>bottom</strong> and <strong>top</strong>. Default value is <strong>bottom</strong></td>
+  </tr>
+  <tr>
+  	<td>arrCustomButtons</td>
+  	<td>
+  	Define a custom button.
+  	<pre>
+  	//standard button
+  	oEdit1.arrCustomButtons.push(["MyCustomButton1", "alert('Custom Command here..')", "Caption..", "btnCustom1.gif"]);
+
+  	//dropdown button
+	var dropdownItems = [
+		["dropdown id", "action here, to be executed by eval()", "dropdown text here..."],
+		["dropdown1", "alert('test');", "Dropdown Item 1"],
+		["dropdown2", "modalDialog('somedialog1.htm',500,223,'My Dialog1');", "Dropdown Item 2"],
+		["dropdown3", "modalDialog('somedialog2.htm',800,453,'My Dialog2');", "Dropdown Item 3"]
+	];
+  	oEdit1.arrCustomButtons.push(["MyCustomButton1", "alert('Custom Command here..')", "Caption..", "btnCustom1.gif", 0, dropdownItems]);
+  	</pre>
+  	<p>The format is</p>
+  	<ul>
+  		<li>Button name</li>
+  		<li>Action when clicked, note that the action will be executed using javascript eval() function</li>
+  		<li>Title (tooltip)</li>
+  		<li>Icon file name</li>
+		<li>icon width, specify icon width, default value is 0 (editor icon standard width). Specify this value if you have custom icon file with non standard witdh.</li>
+		<li>dropdownitems, array of dropdown items with the following format:<br />
+			<p>
+			<strong>["dropdown id", "action, to be executed by eval()", "dropdown text here..."]</strong>
+			</p>
+		</li>
+  	</ul>
+  	</td>
+  </tr>
+  <tr>
+  	<td>customTag</td>
+  	<td>Define custom tag options
+  	<pre>
+  	oEdit1.arrCustomTag = [["First Name", "{%first_name%}"],
+		["Last Name", "{%last_name%}"],
+		["Email", "{%email%}"]];
+  	</pre>
+  	</td>
+  </tr>
+  <tr>
+  	<td>mode</td><td>Set editing mode. Default value is </strong>XHTMLBody</strong>. Possible values are:
+  	<ul>
+  		<li>XHTML, enables the Editor to edit/return full HTML Content with XHTML rules applied.</li>
+  		<li>XHTMLBody, enables the Editor to edit/return HTML BODY section with XHTML rules applied.</li>
+  	</ul>
+  	</td>
+  </tr>
+  <tr>
+  	<td>disableFocusOnLoad</td><td>By default editor always get the focus on first load. Sometimes this may not
+  	be wanted especially of editor is located down the page which will cause the page scroll to editor position.
+  	Default value is false.
+  	<pre>
+  	oEdit1.disableFocusOnLoad = true;
+  	</pre>
+  	</td>
+  </tr>
+</table>
+
+<p><strong>2. Editor Methods/Functions</strong></p>
+<table cellpadding="5" cellspacing="5" border="1">
+  <tr>
+  	<td>Name</td>
+  	<td>Description</td>
+  </tr>
+  <tr>
+  	<td>REPLACE()</td><td>Replace &lt;textarea&gt; with editor. This method has 2 parameters:
+  		<ul>
+  			<li>textarea id, id of textarea to be replaced with editor.</li>
+  			<li>placeholder id where editor will be rendered. This is optional.
+  				This parameter is useful especially when loading editor after page load using AJAX mechanism.</li>
+  		</ul>
+  	</td>
+  </tr>
+  <tr>
+  	<td>loadHTML()</td><td>Load html content into editor. New content will replace existing content.
+  	<pre>
+  	oEdit1.loadHTML("<strong>Hello World</strong>");
+  	</pre>
+  	</td>
+  </tr>
+  <tr>
+    <td>putHTML()</td><td>Same as <strong>loadHTML()</strong></td>
+  </tr>
+  <tr>
+  	<td>insertHTML()</td><td>Insert HTML chunk on cursor position.
+  	<pre>
+  	oEdit1.insertHTML("<strong>Hello World</strong>");
+  	</pre>
+  	</td>
+  </tr>
+  <tr>
+  	<td>fullScreen()</td><td>Make the editor occupy full screen size. You can call this function in page
+  	<strong>onload</strong> event to make the editor full screen size.
+  	</td>
+  </tr>
+  <tr>
+  	<td>getXHTMLBody()</td><td>This function returns XHTML compliant content from editor. The content returned is body only content.
+  	<pre>
+  	var content = oEdit1.getXHTMLBody();
+  	</pre>
+  	</td>
+  </tr>
+  <tr>
+  	<td>getXHTML()</td><td>Get full XHTML compliant content.</td>
+  </tr>
+  <tr>
+  	<td>getHTMLBody()</td><td>Get HTML body content</td>
+  </tr>
+  <tr>
+  	<td>getHTML()</td><td>Get full HTML content</td>
+  </tr>
+  <tr>
+  	<td>getTextBody()</td><td>Get text only content</td>
+  </tr>
+  <tr>
+	<td>isContentChanged()</td><td>Check if content has been changed.
+	<pre>
+	if(oEdit1.isContentChanged()) {
+		//do something
+	}
+	</pre>
+	</td>
+  </tr>
+  <tr>
+	<td>onKeyPress()</td><td>
+	Key pressed event, fired when key pressed in editor.
+	</td>
+  </tr>
+  <tr>
+	<td>focus()</td><td>Focus the editor</td>
+  </tr>
+  <tr>
+  	<td>setDialogsize(name, dim)</td><td>Set dialog size. Here are list of dialog available:
+  		<ul>
+  			<li>Preview</li>
+  			<li>TableDialog</li>
+  			<li>ImageDialog</li>
+  			<li>TextDialog</li>
+  			<li>YoutubeDialog</li>
+  			<li>LinkDialog</li>
+  			<li>SourceDialog</li>
+  			<li>CompleteTextDialog</li>
+  			<li>FontDialog</li>
+  			<li>FlashDialog</li>
+  			<li>BookmarkDialog</li>
+  			<li>CharsDialog</li>
+  			<li>SearchDialog</li>
+  		</ul>
+	<p>Example:</p>
+	<pre>
+	oEdit1.setDialogSize("Preview", {w:1000, h:700});
+	</pre>
+  	</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+.grouplisting {
+    margin: 20px 0 0;
+}
+
+.grouplisting .group {
+    border-radius: 5px;
+    margin: 5px 0 0;
+}
+
+.groups .group__head {
+    width: 100%;
+    position: relative;
+    padding: 20px 50px 20px 20px;
+    cursor: pointer;
+    border: solid 1px #eee;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.groups .group__body {
+    padding: 20px 20px 0;
+    display: none;
+}
+
+.groups .group__head h5 {
+    padding: 0;
+    font-size:0.95em;font-weight: 600;margin: 0;
+    font-family: inherit;
+}
+
+.groups .group__head:after {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    content: "+";
+    pointer-events: none;
+    font-size: 1.6rem;
+    color: #333;
+    padding: 0 0 0 1px;
+}
+
+.groups.is-active .group__head:after {
+    content: "-";
+    font-size: 2.2em;
+    top: 6px;
+}
+
+
+.editor-container, .groups .group__body h5 {
+
+    font-size: 0.95em;
+}
+
+.editor-container, .groups .group__body p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+}

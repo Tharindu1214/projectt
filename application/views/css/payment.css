@@ -1,0 +1,87 @@
+html, body {
+	height: 100%;
+	min-height: 100%;
+	background: #f7f7f7;
+}
+.payment-page {
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.cc-payment {
+	background: #fff;
+	border: solid 1px #e1dfdf;
+	margin: 0 auto;
+	max-width: 600px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.logo-payment {max-width:200px;
+	text-align: center;
+	margin: 25px auto;
+}
+.logo-payment img, .logo-payment svg {
+	margin: 0 auto;
+	max-width: 100%;
+}
+.reff p {
+	padding: 10px 10px;
+}
+.payment-from {
+	border-top: solid 1px #e1dfdf;
+	display: table;
+	width: 100%;
+	padding: 15px;
+}
+.payment-from .siteForm label {
+	text-align: left;
+	display: block;
+}
+.payment-from .siteForm input.type-bg {
+	background: url(images/cc-pay.png) no-repeat right center;
+}
+.payment-from .field {
+	margin-bottom: 15px;
+	text-align: left;
+}
+.cvv {
+	float: left
+}
+.ccExpiryMonth, .ccExpiryYear {
+	float: left;
+}
+.expiry-wrapper, .ccCvvWrapper {
+	float: left;
+}
+.ccExpiryYear {
+	margin-left: 20px;
+}
+.ccCvvWrapper {
+	width: 205px;
+	margin-left: 50px;
+}
+.payment-from .siteForm input.ccCvvBox {
+	width: 119px;
+	margin-right: 10px;
+	float: left;
+}
+.total-pay {
+	margin-bottom: 10px;
+	color: #000;
+	font-size: 16px;
+	font-weight: 600;
+}
+.total-pay small {
+	font-size: 13px;
+	color: #333;
+}
+ @media only screen and (max-width:768px) {
+.payment-page {
+	height: auto;
+}
+.cc-payment {
+	transform: none; position:static;
+}
+}

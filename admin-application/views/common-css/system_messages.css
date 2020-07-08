@@ -1,0 +1,484 @@
+/** system message **/
+
+#mbsmessage,
+.system_message {
+	position: fixed;
+	width: auto;
+	margin: 0 auto;
+	-webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
+	z-index: 1005;
+	text-align: center;
+}
+
+#mbsmessage .content,
+.system_message .content {
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#mbsmessage .content:before,
+.system_message .content:before {
+	background-size: 18px !important;
+	content: "";
+	left: -26px;
+	position: absolute;
+	top: 2px;
+	z-index: 2;
+	width: 30px;
+	height: 30px;
+	display: block;
+}
+
+#mbsmessage.alert--danger .content:before,
+.system_message.alert--danger .content:before {
+	background: url(../images/icon--attention.svg) no-repeat;
+}
+
+#mbsmessage.alert--success .content:before,
+.system_message.alert--success .content:before {
+	background: url(../images/icon--success.svg) no-repeat;
+}
+
+#mbsmessage.alert--info .content:before,
+.system_message.alert--info .content:before {
+	background: url(../images/icon--info.svg) no-repeat no-repeat;
+}
+
+#mbsmessage.alert--warning .content:before,
+.system_message.alert--warning .content:before {
+	background: url(../images/icon--warning.svg) no-repeat no-repeat;
+}
+
+.alert--success {
+	background: #00b6ad;
+}
+
+.alert--info {
+	background: #02b4d1;
+}
+
+.alert--warning {
+	background: #f3c532;
+}
+
+.alert--process {
+	background: #333;
+}
+
+.alert--danger {
+	background-color: #f35f5f;
+}
+
+.div_error {
+	text-align: left;
+	padding: 20px 60px 20px 60px;
+	position: relative;
+	color: #fff;
+	/*font-size: 0;*/
+	line-height: normal;
+	background: url(../images/icon--attention.svg) no-repeat 15px 15px #f35f5f;
+	background-size: 30px;
+}
+
+.alert .div_error {
+	padding: 0px;
+}
+
+#mbsmessage .content .div_error,
+#mbsmessage .content .div_info {
+	padding: 0px;
+}
+
+.alert .div_error {
+	background: none;
+}
+
+.div_error li {
+	position: relative;
+	padding: 0 0 5px 0;
+	list-style: none;
+	color: #fff;
+}
+
+.div_error li a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.div_info {
+	font-weight: normal;
+	position: relative;
+	color: #fff;
+	background: url(../images/icon--info.svg) no-repeat 15px 15px #02b4d1;
+	background-size: 30px;
+}
+
+.alert .div_info {
+	background: none;
+}
+
+.div_info li {
+	font-weight: 300;
+	font-size: 1em;
+	position: relative;
+	padding: 0 0 5px 0;
+	color: inherit;
+}
+
+.div_info li a {
+	font-weight: normal;
+	text-decoration: none;
+	color: #fff;
+	cursor: default;
+}
+
+.alert .div_msg {
+	background: none;
+}
+
+.div_msg {
+	font-weight: normal;
+	padding: 20px 40px 20px 60px;
+	position: relative;
+	color: #fff;
+	background: url(../images/icon--success.svg) no-repeat 15px 15px #00b6ad;
+	background-size: 30px;
+}
+
+#mbsmessage .div_msg,
+.system_message .div_msg {
+	padding: 0;
+}
+
+.div_msg li {
+	font-weight: 300;
+	font-size: 1em;
+	position: relative;
+	padding: 0 0 5px 0;
+	color: inherit;
+	list-style: none;
+	color: #fff;
+}
+
+.div_msg li a {
+	font-weight: normal;
+	font-size: 13px;
+	text-decoration: none;
+	color: #fff;
+	cursor: default;
+}
+
+.div_info li:last-child,
+.div_error li:last-child,
+.div_msg li:last-child {
+	padding-bottom: 0;
+}
+
+/* validation error messages */
+
+.error {
+	border-color: #F00 !important;
+}
+
+.errorlist {
+	margin: 0;
+	list-style: none;
+	padding: 2px 10px 4px;
+	position: relative;
+	background: #fdf7f6;
+	clear: both;
+}
+
+.errorlist li a {
+	color: #f44336;
+	font-size: 11px;
+	/*text-transform: uppercase;*/
+	text-decoration: none;
+}
+
+.errorlist li:last-child {
+	padding-bottom: 0;
+}
+
+.errorlist li {
+	font-size: 12px;
+	position: relative;
+}
+
+/* alerts */
+
+.alert {
+	font-size: 1em;
+	color: #fff;
+	width: 100%;
+	/*position: relative;*/
+	padding: 20px 40px;
+	border: 1px solid transparent;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUp {
+	from {
+		opacity: 0;
+		visibility: hidden;
+		/*-webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);*/
+		-webkit-transform: translate3d(0, 40px, 0);
+		transform: translate3d(0, 40px, 0);
+	}
+
+	to {
+		opacity: 1;
+		/*visibility: visible;*/
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		visibility: hidden;
+		/*-webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);*/
+		-webkit-transform: translate3d(0, 40px, 0);
+		transform: translate3d(0, 40px, 0);
+	}
+
+	to {
+		visibility: visible;
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+.alert a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.alert--positioned-top {
+	right: 20px;
+	top: 25px;
+	left: auto !important;
+	bottom: auto !important;
+}
+
+.alert--positioned-bottom {
+	left: 20px;
+	bottom: 25px;
+}
+
+.alert--positioned-right-top {
+	right: 20px;
+	top: 25px;
+	left: auto !important;
+	bottom: auto !important;
+}
+
+.alert--positioned-right-bottom {
+	right: 20px;
+	bottom: 25px;
+	left: auto !important;
+	bottom: auto !important;
+}
+
+.alert--positioned-bottom-center {
+	bottom: 25px;
+}
+
+.alert--positioned-top-center {
+	left: 0 !important;
+	right: 0 !important;
+	top: 0;
+}
+
+.alert--positioned-center-center {
+	left: 50% !important;
+	top: 50% !important;
+	bottom: auto !important;
+	-webkit-transform: translateX(-50%) !important;
+	transform: translateX(-50%) !important;
+}
+
+.alert--positioned-top-full {
+	left: 0 !important;
+	right: 0 !important;
+	top: 0;
+}
+
+.alert--positioned-small {
+	width: 100%;
+	max-width: 400px;
+	left: 0;
+	right: 0;
+
+}
+
+.alert p {
+	color: inherit;
+}
+
+.alert h5 {
+	font-size: 18px;
+	font-weight: 500;
+	padding: 0;
+	color: inherit;
+}
+
+.alert .close,
+.system_message .close {
+	opacity: 0.3;
+}
+
+.alert .close:hover,
+.system_message .close:hover {
+	opacity: 1;
+}
+
+.close,
+.system_message .closeMsg {
+	z-index: 1;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	text-align: center;
+	line-height: 18px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	opacity: 0.47;
+}
+
+.close:hover,
+.system_message .closeMsg:hover {
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+	opacity: 1;
+}
+
+.close:before,
+.system_message .closeMsg:before {
+	width: 3px;
+	height: 15px;
+	left: 50%;
+	margin: 0 0 0 -2px;
+	position: absolute;
+	top: 2px;
+	content: "";
+	background: #fff;
+}
+
+.close:after,
+.system_message .closeMsg:after {
+	width: 15px;
+	height: 3px;
+	left: 2px;
+	top: 50%;
+	margin: -2px 0 0 0;
+	position: absolute;
+	content: "";
+	background: #fff;
+}
+
+.close30 {
+	width: 30px;
+	height: 30px;
+}
+
+.close30::before {
+	height: 25px;
+}
+
+.close30::after {
+	width: 25px;
+}
+
+.close.close-black:before,
+.close.close-black:after {
+	background: #000;
+}
+
+.alert h4,
+.alert p {
+	margin: 0;
+	color: inherit;
+}
+
+.alert > p,
+.alert > ul {
+	margin-bottom: 0;
+}
+
+.alert > p + p {
+	margin-top: 5px;
+}
+
+.alert--process:before {
+	content: "";
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	position: absolute;
+	left: 15px;
+	top: 14px;
+	border-top: 3px solid rgba(255, 255, 255, 0.2);
+	border-right: 3px solid rgba(255, 255, 255, 0.2);
+	border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+	border-left: 3px solid #ffffff;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-animation: load8 1.1s infinite linear;
+	animation: load8 1.1s infinite linear;
+}
+
+@-webkit-keyframes load8 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes load8 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@media(max-width:767px) {
+
+	#mbsmessage,
+	.system_message {
+		left: 10px;
+		right: 10px;
+		width: auto;
+	}
+
+	#mbsmessage .content,
+	.system_message .content {
+		min-width: inherit;
+	}
+}

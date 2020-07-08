@@ -1,0 +1,199 @@
+
+<section class="section bg--second-color">
+	<div class="container">
+		<div class="section-head section--white--head">
+			<div class="section__heading">
+				<h2>Trending Products</h2>
+			</div>
+					</div>
+		<div class="js-collection-corner collection-corner product-listing" dir="ltr">
+							<!--product tile-->
+<div class="products  ">
+    <div class="products__quickview">
+        <a onClick='quickDetail(180)' class="modaal-inline-content">
+            <span class="svg-icon">
+                <svg class="svg">
+                    <use xlink:href="/images/retina/sprite.svg#quick-view" href="/images/retina/sprite.svg#quick-view"></use>
+                </svg>
+            </span>Quick View        </a>
+    </div>
+	<div class="products__body">
+		 <div class="favourite-wrapper ">
+                                <div class="favourite heart-wrapper heart-wrapper-Js wishListLink-Js " id="listDisplayDiv_180" data-id="180">
+                    <a href="javascript:void(0)" onClick="viewWishList(180,this,event);"
+                        title="Add Product To Your Wishlist">
+                        <div class="ring"></div>
+                        <div class="circles"></div>
+                    </a>
+                </div>
+            </div>
+        		<div class="products__img">
+			<a title="OMG BOX" href="/theomgbox-classic-180"><img data-ratio="1:1 (500x500)" src="/image/product/10/CLAYOUT3/180/0/1?t=1590569047" alt="Gift Boxes"> </a>
+		</div>
+	</div>
+	<div class="products__footer">
+		<div class="products__category"><a href="/gift-boxes">Gift Boxes </a></div>
+	<div class="products__title"><a title="OMG BOX" href="/theomgbox-classic-180">OMG BOX </a></div>
+	  <div class="products__price">Rs1,500.00                  				                  </div>
+</div>
+</div>
+<!--/product tile-->
+							<!--product tile-->
+<div class="products  ">
+    <div class="products__quickview">
+        <a onClick='quickDetail(334)' class="modaal-inline-content">
+            <span class="svg-icon">
+                <svg class="svg">
+                    <use xlink:href="/images/retina/sprite.svg#quick-view" href="/images/retina/sprite.svg#quick-view"></use>
+                </svg>
+            </span>Quick View        </a>
+    </div>
+	<div class="products__body">
+		 <div class="favourite-wrapper ">
+                                <div class="favourite heart-wrapper heart-wrapper-Js wishListLink-Js " id="listDisplayDiv_334" data-id="334">
+                    <a href="javascript:void(0)" onClick="viewWishList(334,this,event);"
+                        title="Add Product To Your Wishlist">
+                        <div class="ring"></div>
+                        <div class="circles"></div>
+                    </a>
+                </div>
+            </div>
+        		<div class="products__img">
+			<a title="Pink Aventurine Bracelet" href="/pink-aventurine-bracelet-334"><img data-ratio="1:1 (500x500)" src="/cache/67/3d6d23fc1cf743d37e89b136e2f8cd.jpg" alt="Jewellery"> </a>
+		</div>
+	</div>
+	<div class="products__footer">
+		<div class="products__category"><a href="/womens-fashion-jewellery">Jewellery </a></div>
+	<div class="products__title"><a title="Pink Aventurine Bracelet" href="/pink-aventurine-bracelet-334">Pink Aventurine Bracelet </a></div>
+	  <div class="products__price">Rs1,500.00                  				                  </div>
+</div>
+</div>
+<!--/product tile-->
+							<!--product tile-->
+<div class="products  ">
+    <div class="products__quickview">
+        <a onClick='quickDetail(342)' class="modaal-inline-content">
+            <span class="svg-icon">
+                <svg class="svg">
+                    <use xlink:href="/images/retina/sprite.svg#quick-view" href="/images/retina/sprite.svg#quick-view"></use>
+                </svg>
+            </span>Quick View        </a>
+    </div>
+	<div class="products__body">
+		 <div class="favourite-wrapper ">
+                                <div class="favourite heart-wrapper heart-wrapper-Js wishListLink-Js " id="listDisplayDiv_342" data-id="342">
+                    <a href="javascript:void(0)" onClick="viewWishList(342,this,event);"
+                        title="Add Product To Your Wishlist">
+                        <div class="ring"></div>
+                        <div class="circles"></div>
+                    </a>
+                </div>
+            </div>
+        		<div class="products__img">
+			<a title="Purple Agate Bracelet" href="/purple-agate-bracelet-342"><img data-ratio="1:1 (500x500)" src="/cache/17/1a2af3e7b62440ba00b18536f0d0bd.jpg" alt="Jewellery"> </a>
+		</div>
+	</div>
+	<div class="products__footer">
+		<div class="products__category"><a href="/womens-fashion-jewellery">Jewellery </a></div>
+	<div class="products__title"><a title="Purple Agate Bracelet" href="/purple-agate-bracelet-342">Purple Agate Bracelet </a></div>
+	  <div class="products__price">Rs1,500.00                  				                  </div>
+</div>
+</div>
+<!--/product tile-->
+							<!--product tile-->
+<div class="products  ">
+    <div class="products__quickview">
+        <a onClick='quickDetail(333)' class="modaal-inline-content">
+            <span class="svg-icon">
+                <svg class="svg">
+                    <use xlink:href="/images/retina/sprite.svg#quick-view" href="/images/retina/sprite.svg#quick-view"></use>
+                </svg>
+            </span>Quick View        </a>
+    </div>
+	<div class="products__body">
+		 <div class="favourite-wrapper ">
+                                <div class="favourite heart-wrapper heart-wrapper-Js wishListLink-Js " id="listDisplayDiv_333" data-id="333">
+                    <a href="javascript:void(0)" onClick="viewWishList(333,this,event);"
+                        title="Add Product To Your Wishlist">
+                        <div class="ring"></div>
+                        <div class="circles"></div>
+                    </a>
+                </div>
+            </div>
+        		<div class="products__img">
+			<a title="Gold Sandstone Bracelet" href="/gold-sandstone-bracelet-333"><img data-ratio="1:1 (500x500)" src="/cache/63/6450be72a936b59832911e7aae32b1.jpg" alt="Jewellery"> </a>
+		</div>
+	</div>
+	<div class="products__footer">
+		<div class="products__category"><a href="/womens-fashion-jewellery">Jewellery </a></div>
+	<div class="products__title"><a title="Gold Sandstone Bracelet" href="/gold-sandstone-bracelet-333">Gold Sandstone Bracelet </a></div>
+	  <div class="products__price">Rs1,600.00                  				                  </div>
+</div>
+</div>
+<!--/product tile-->
+							<!--product tile-->
+<div class="products  ">
+    <div class="products__quickview">
+        <a onClick='quickDetail(338)' class="modaal-inline-content">
+            <span class="svg-icon">
+                <svg class="svg">
+                    <use xlink:href="/images/retina/sprite.svg#quick-view" href="/images/retina/sprite.svg#quick-view"></use>
+                </svg>
+            </span>Quick View        </a>
+    </div>
+	<div class="products__body">
+		 <div class="favourite-wrapper ">
+                                <div class="favourite heart-wrapper heart-wrapper-Js wishListLink-Js " id="listDisplayDiv_338" data-id="338">
+                    <a href="javascript:void(0)" onClick="viewWishList(338,this,event);"
+                        title="Add Product To Your Wishlist">
+                        <div class="ring"></div>
+                        <div class="circles"></div>
+                    </a>
+                </div>
+            </div>
+        		<div class="products__img">
+			<a title="Yellow Turquoise Bracelet" href="/yellow-turquoise-338"><img data-ratio="1:1 (500x500)" src="/cache/58/b5f4382eeccaf7db31bba98635fb36.jpg" alt="Jewellery"> </a>
+		</div>
+	</div>
+	<div class="products__footer">
+		<div class="products__category"><a href="/men-jewellery">Jewellery </a></div>
+	<div class="products__title"><a title="Yellow Turquoise Bracelet" href="/yellow-turquoise-338">Yellow Turquoise Bracelet </a></div>
+	  <div class="products__price">Rs1,600.00                  				                  </div>
+</div>
+</div>
+<!--/product tile-->
+							<!--product tile-->
+<div class="products  ">
+    <div class="products__quickview">
+        <a onClick='quickDetail(339)' class="modaal-inline-content">
+            <span class="svg-icon">
+                <svg class="svg">
+                    <use xlink:href="/images/retina/sprite.svg#quick-view" href="/images/retina/sprite.svg#quick-view"></use>
+                </svg>
+            </span>Quick View        </a>
+    </div>
+	<div class="products__body">
+		 <div class="favourite-wrapper ">
+                                <div class="favourite heart-wrapper heart-wrapper-Js wishListLink-Js " id="listDisplayDiv_339" data-id="339">
+                    <a href="javascript:void(0)" onClick="viewWishList(339,this,event);"
+                        title="Add Product To Your Wishlist">
+                        <div class="ring"></div>
+                        <div class="circles"></div>
+                    </a>
+                </div>
+            </div>
+        		<div class="products__img">
+			<a title="Phoeniz Laps Lazuli Bracelet" href="/phoenix-lapis-lazuli-339"><img data-ratio="1:1 (500x500)" src="/cache/e4/fdc7fb1e1f74e9fb3ae4f8b04ffe6e.jpg" alt="Jewellery"> </a>
+		</div>
+	</div>
+	<div class="products__footer">
+		<div class="products__category"><a href="/men-jewellery">Jewellery </a></div>
+	<div class="products__title"><a title="Phoeniz Laps Lazuli Bracelet" href="/phoenix-lapis-lazuli-339">Phoeniz Laps Lazuli Bracelet </a></div>
+	  <div class="products__price">Rs1,600.00                  				                  </div>
+</div>
+</div>
+<!--/product tile-->
+					</div>
+	</div>
+</section>
+

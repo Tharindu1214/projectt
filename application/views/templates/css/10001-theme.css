@@ -1,0 +1,14 @@
+/*{layoutId} css*/
+
+.bg--shop {
+	background: var(--theme-background-color--);
+}
+.shop-nav {
+	background: var(--theme-header-color--);
+}
+.shop-nav  li > a {
+	color: var(--theme-text-color--);
+}
+.shop--header04 {
+	background: var(--theme-header-color--);
+}

@@ -1,0 +1,482 @@
+Wed, 25 Dec 2019 15:07:28 +0530
+Array
+(
+    [error_no] => 256
+    [String] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+    [File] => /var/www/html/library/core/Database.class.php
+    [Line] => 0
+    [Context] => Array
+        (
+            [rs] => 
+            [er] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+        )
+
+)
+
+===================
+
+Wed, 25 Dec 2019 15:07:28 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Wed, 25 Dec 2019 15:07:29 +0530
+Array
+(
+    [error_no] => 256
+    [String] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+    [File] => /var/www/html/library/core/Database.class.php
+    [Line] => 0
+    [Context] => Array
+        (
+            [rs] => 
+            [er] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+        )
+
+)
+
+===================
+
+Wed, 25 Dec 2019 15:07:29 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Wed, 25 Dec 2019 15:07:30 +0530
+Array
+(
+    [error_no] => 256
+    [String] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+    [File] => /var/www/html/library/core/Database.class.php
+    [Line] => 0
+    [Context] => Array
+        (
+            [rs] => 
+            [er] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+        )
+
+)
+
+===================
+
+Wed, 25 Dec 2019 15:07:30 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Wed, 25 Dec 2019 15:07:31 +0530
+Array
+(
+    [error_no] => 256
+    [String] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+    [File] => /var/www/html/library/core/Database.class.php
+    [Line] => 0
+    [Context] => Array
+        (
+            [rs] => 
+            [er] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+        )
+
+)
+
+===================
+
+Wed, 25 Dec 2019 15:07:31 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Wed, 25 Dec 2019 15:20:11 +0530
+Array
+(
+    [error_no] => 256
+    [String] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+    [File] => /var/www/html/library/core/Database.class.php
+    [Line] => 0
+    [Context] => Array
+        (
+            [rs] => 
+            [er] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+        )
+
+)
+
+===================
+
+Wed, 25 Dec 2019 15:20:11 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Wed, 25 Dec 2019 15:20:38 +0530
+Array
+(
+    [error_no] => 256
+    [String] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+    [File] => /var/www/html/library/core/Database.class.php
+    [Line] => 0
+    [Context] => Array
+        (
+            [rs] => 
+            [er] => Invalid resultset. Unknown column 'ua.ua_city_id' in 'on clause'SELECT ua.*, 
+state_code, 
+country_code, 
+IFNULL(country_name, country_code) as country_name, 
+IFNULL(state_name, state_identifier) as state_name, 
+IFNULL(city_name, city_identifier) as city_name
+ FROM 
+`tbl_user_address` ua  
+LEFT OUTER JOIN `tbl_countries`  AS c  
+ ON c.country_id = ua.ua_country_id  
+LEFT OUTER JOIN `tbl_states`  AS s  
+ ON s.state_id = ua.ua_state_id  
+LEFT OUTER JOIN `tbl_cities`  AS ct  
+ ON ct.city_id = ua.ua_city_id  
+LEFT OUTER JOIN `tbl_countries_lang`  AS c_l  
+ ON c.country_id = c_l.countrylang_country_id AND countrylang_lang_id = 1  
+LEFT OUTER JOIN `tbl_states_lang`  AS s_l  
+ ON s.state_id = s_l.statelang_state_id AND s_l.statelang_lang_id = 1  
+LEFT OUTER JOIN `tbl_cities_lang`  AS ct_l  
+ ON ct.city_id = ct_l.citylang_city_id AND ct_l.citylang_lang_id = 1  
+WHERE `ua_user_id` = ? 
+AND `country_active` = ? 
+AND `state_active` = ? 
+AND `city_active` = ? 
+AND `ua_id` = ? 
+ORDER BY ua_is_default DESC
+        )
+
+)
+
+===================
+
+Wed, 25 Dec 2019 15:20:38 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Wed, 25 Dec 2019 19:04:14 +0530
+Exception: Invalid address: test@gmail.co,
+===================
+
+Tue, 07 Jan 2020 11:08:31 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Tue, 07 Jan 2020 11:09:21 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Thu, 09 Jan 2020 10:55:59 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Wed, 22 Jan 2020 15:16:47 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Wed, 29 Jan 2020 18:22:06 +0530
+Exception: Too few arguments to function Labels::getLabel(), 1 passed in /var/www/html/application/controllers/GuestUserController.php on line 1385 and at least 2 expected
+===================
+
+Mon, 10 Feb 2020 21:33:41 +0530
+Exception: Too few arguments to function Labels::getLabel(), 1 passed in /var/www/html/application/controllers/GuestUserController.php on line 1385 and at least 2 expected
+===================
+
+Mon, 02 Mar 2020 11:55:01 +0530
+Exception: SMTP Error: data not accepted.
+===================
+
+Wed, 25 Mar 2020 13:08:59 +0530
+Exception: Call to a member function sendProductStockAlert() on null
+===================
+
+Wed, 25 Mar 2020 13:09:24 +0530
+Exception: Call to a member function sendProductStockAlert() on null
+===================
+
+Wed, 25 Mar 2020 13:09:34 +0530
+Exception: Call to a member function sendProductStockAlert() on null
+===================
+
+Sat, 04 Apr 2020 21:12:34 +0530
+Exception: Too few arguments to function Labels::getLabel(), 1 passed in /var/www/html/application/controllers/GuestUserController.php on line 1385 and at least 2 expected
+===================
+
+Sun, 05 Apr 2020 12:22:21 +0530
+Exception: Call to a member function fetchAssoc() on boolean
+===================
+
+Tue, 16 Jun 2020 10:18:37 +0530
+Exception: Too few arguments to function Labels::getLabel(), 1 passed in /var/www/html/application/controllers/GuestUserController.php on line 1385 and at least 2 expected
+===================
+

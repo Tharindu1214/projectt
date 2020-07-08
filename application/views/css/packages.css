@@ -1,0 +1,158 @@
+/*package page**/
+.packages-banner {}
+
+.banner-over-txt {
+	text-align: center;
+	padding: 30px 0;
+}
+
+.banner-over-txt h3 {
+	font-size: 2.6em;
+	color: #000;
+	font-weight: 800;
+	line-height: 1.4;
+}
+
+.banner-over-txt p {
+	color: #000;
+	padding: 10px 0;
+}
+
+.package-desc {
+	font-size: 0.9em;
+	text-align: center;
+	margin: 0px auto;
+}
+
+ 
+
+.packages-box .box {
+	text-align: center;
+}
+
+.packages-box .box.is--active {
+	 
+}
+
+.packages-box .box .box-inner {
+	background: #282828;
+	border-radius: 3px;
+	padding: 30px;
+}
+
+.packages-box .box.two .box-inner {
+	background: var(--first-color);
+}
+
+.packages-box .box.two .after-box h3 {
+	background: var(--first-color);
+}
+
+.packages-box .box.three .box-inner {
+	background: var(--second-color);
+}
+
+.packages-box .box.three .after-box h3 {
+	background: var(--second-color);
+}
+
+.packages-box .name {
+	padding: 0 0 20px 0;
+	color: #fff;
+	font-size: 1.5em;
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+
+.packages-box .name span {
+	color: #fff;
+	font-size: 0.8em;
+	display: block;
+	font-weight: normal;
+	text-transform: none;
+}
+
+.packages-box .valid {
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 400;
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+
+.packages-box .valid sup {
+	font-size: 3.2em;
+}
+
+.packages-box .valid span {
+	font-size: 4em;
+	font-weight: 800;
+	line-height: 1;
+}
+
+.packages-box .trial {
+	text-align: center;
+	padding: 20px;
+}
+
+.packages-box .trial ul {}
+
+.packages-box .trial ul li {
+	font-size: 1em;
+	margin: 5px 0;
+	color: #fff;
+}
+
+.packages-box .trial ul li span {
+	font-size: 1em;
+	font-weight: 600;
+}
+
+.packages-box .after-box {
+	margin-top: 10px;
+	background: #f2f2f2;
+	padding: 0 0px 35px 0px;
+	text-align: center;
+}
+
+.packages-box .after-box h3 {
+	background: #282828;
+	border-radius:2px;
+	color: #fff;
+	font-weight: 400;
+	text-align: center;
+	padding: 10px;
+	font-size: 1.1em;
+}
+
+.packages-box .after-box ul {
+	margin: 30px auto;
+	text-align: center;
+	display: block;
+	max-width: 220px;
+}
+
+.packages-box .after-box ul li {
+	text-align: left;
+	border-radius: 4px;
+	padding: 0 5px;
+	margin: 0.5rem auto;
+	font-size: 0.852em;
+}
+
+.packages-box .after-box .checkbox,
+.packages-box .after-box .radio {
+	vertical-align: top;
+	line-height: 1;
+}
+
+.packages-box a.btn {
+	min-width: 220px;
+}
+
+@media (max-width:1025px) {
+	.packages-box a.btn {
+		min-width: inherit;
+	}
+ 
+}

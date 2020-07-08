@@ -1,0 +1,8 @@
+/*{layoutId} css*/
+
+
+.bg--shop {background: var(--theme-background-color--);}
+.shop-nav-bar{background: var(--theme-header-color--);}
+.shop-navigations > li > a {color: var(--theme-text-color--);}
+.shop--header04{ background:var(--theme-header-color--);}
+

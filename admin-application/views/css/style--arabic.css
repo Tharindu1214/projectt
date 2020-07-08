@@ -1,0 +1,303 @@
+body {
+  direction: rtl;
+  text-align: right;
+}
+.ltr-right {
+    direction: ltr;
+    text-align: right;
+}
+
+.right {
+  float: left !important;
+}
+
+.left {
+  float: right !important;
+}
+
+.iconmenus {
+  float: left;
+}
+
+.leftside {
+  left: auto;
+  right: -280px;
+  transform: translate3d(0px, 0px, 0px);
+  -ms-transform: translate3d(0px, 0px, 0px);
+  /* IE 9 */
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  /* Chrome, Safari, Opera */
+}
+
+body.toggled-left .leftside {
+  transform: translate3d(0px, 0px, 0px);
+  right: 0;
+  -ms-transform: translate3d(0px, 0px, 0px);
+  /* IE 9 */
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  /* Chrome, Safari, Opera */
+}
+
+.profilecover .profilepic {
+  left: auto;
+  right: 15px;
+}
+
+.leftmenu>li ul li a {
+  padding: 4px 20px 4px 4px;
+}
+
+.leftmenu>li ul li a:before {
+  left: auto;
+  right: 0;
+}
+
+.leftmenu>li ul:before {
+  left: auto;
+  right: 10px;
+}
+
+.page__title {
+  padding: 0 60px 0 0;
+}
+
+.page__icon {
+  left: auto;
+  right: 0;
+}
+
+.page__title .col--first {
+  float: right;
+}
+
+.breadcrumb {
+  width: auto;
+}
+
+.section.searchform_filter .sectionhead h4:before {
+  left: 0;
+  right: auto;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+}
+
+.field--calender {
+  background-position: 10px center;
+}
+
+select {
+  background-position: 10px center;
+  padding-left: 30px;
+}
+
+.leftmenu>li.haschild>a:before {
+  left: 16px;
+  right: auto;
+}
+
+.profilecover .profileinfo:before {
+  left: 10px;
+  right: auto;
+}
+
+.profilecover .profileinfo {
+  padding: 8px 15px 8px 34px;
+}
+
+.dropwrap {
+  left: 0;
+  right: auto;
+  transform-origin: left top;
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+}
+
+.linksvertical li a, .dropwrap .head {
+  text-align: right;
+}
+
+.iconmenus>li {
+  float: right;
+}
+
+.div_error {
+  text-align: right;
+  padding: 20px 60px 20px 40px !important;
+  background: url(../images/icon--attention.svg) no-repeat calc(100% - 15px) 15px #f35f5f;
+  background-size: 30px;
+}
+
+.div_info {
+  padding: 20px 60px 20px 40px !important;
+  text-align: right;
+  background: url(../images/icon--info.svg) no-repeat calc(100% - 15px) 15px #02b4d1;
+  background-size: 30px;
+}
+
+.div_msg, .alert--success, .alert_success {
+  text-align: right;
+  padding: 20px 60px 20px 40px !important;
+  background: url(../images/icon--success.svg) no-repeat calc(100% - 15px) 15px #00b6ad;
+  background-size: 30px;
+}
+
+.alert--process, .alert_process {
+  padding: 20px 60px 20px 40px !important;
+}
+
+.alert .close, .system_message .close {
+  right: auto;
+  left: 10px;
+}
+
+.section .sectionhead:before {
+  right: 15px;
+  left: auto;
+}
+
+.section .sectionhead {
+  padding: 30px 40px 30px 20px;
+  text-align: right;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+  float: left;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: right;
+}
+
+.alert--process:before {
+  right: 15px;
+  left: auto;
+}
+
+.alert {
+  padding: 20px 60px 20px 40px;
+}
+
+#facebox .close {
+  left: 0;
+  right: auto;
+}
+
+.field-set {
+  text-align: right;
+}
+
+.form_horizontal .field-set .caption-wraper {
+  /* text-align: left;*/
+  padding-right: 0;
+  padding-left: 25px;
+}
+
+.shop-template.is--active::before {
+  left: 10px;
+  right: auto;
+}
+
+.tabs_nav>li {
+  float: right;
+}
+
+/*.layout--rtl{direction: ltr;}
+.layout--rtl .field-set{text-align: left;direction: ltr;}
+.layout--rtl.form_horizontal .field-set .caption-wraper{padding-left: 0;padding-right: 25px;text-align: left;}*/
+.layout--ltr {
+  direction: ltr;
+}
+
+.layout--ltr .field-set {
+  text-align: left;
+  direction: ltr;
+}
+
+.layout--ltr.form_horizontal .field-set .caption-wraper {
+  padding-left: 25px;
+  padding-right: 0;
+  text-align: left;
+}
+
+.grid__left {
+  padding-right: 30px;
+}
+
+.box__head::before {
+  left: auto;
+  right: 0;
+}
+
+.box__head {
+  padding-left: 0;
+  padding-right: 25px;
+}
+
+.nav--floated li {
+  float: right;
+  margin: 0 0 0 20px;
+}
+
+.list--graphinfo li .count {
+  float: left;
+}
+
+.label:before {
+  left: auto;
+  right: 0;
+}
+
+.label {
+  padding: 0 20px 0 0;
+}
+
+.box--white .box__head {
+  padding: 20px 40px 20px 20px;
+}
+
+.box--white .box__head:before {
+  right: 15px;
+  left: auto;
+}
+
+.section .sectionhead .themebtn {
+  left: 20px;
+  right: auto;
+  margin-left: 0;
+}
+
+.grid__right {
+  border-left: none;
+  border-right: 1px solid #e3e7ed;
+}
+
+.grid__right .box__head .actions.right {
+  right: auto;
+  left: -10px;
+}
+
+.section .sectionhead .actions.actions--centered .dropwrap {
+  right: auto;
+  left: 0;
+}
+
+/*right*/
+.table thead th, .table th {
+  text-align: right;
+}
+
+.box--stats .box__body {
+  padding: 15px 15px 15px 70px;
+}
+
+.stats__icon {
+  right: auto;
+  left: 20px;
+}
+
+.box__head .actions.right {
+  right: auto;
+  left: 10px;
+}
+#facebox{ text-align: right;}

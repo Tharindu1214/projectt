@@ -1,0 +1,1 @@
+a:1:{i:1;a:2:{s:17:"keyword_relevancy";i:0;s:8:"in_stock";i:1;}}

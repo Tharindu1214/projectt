@@ -1,0 +1,14 @@
+
+.cellgrid .flipbox .back{display: none;transform: rotate(0deg);-ms-transform: rotate(0deg);-webkit-transform: rotate(0deg);}
+.cellgrid .flipbox:hover .back{display:table;}
+.cellgrid .flipbox:hover .flipper {transform: rotateY(0deg);-ms-transform: rotateY(0deg);-webkit-transform: rotateY(0deg);}
+
+
+
+.cellgrid .front, .cellgrid .back {
+-webkit-backface-visibility: visible;
+-moz-backface-visibility: visible;
+backface-visibility: visible;
+-webkit-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
+transform-style: preserve-3d;}

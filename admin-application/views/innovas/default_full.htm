@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <script language="javascript" src='scripts/innovaeditor.js'></script>
+
+    <link href="styles/default.css" rel="stylesheet" type="text/css" />
+
+    <!-- OPTIONAL: This section is required only if using Google Fonts Dialog AND required on the page where the content is published -->
+    <script src="scripts/common/jquery-1.7.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js" type="text/javascript"></script>
+    <script src="scripts/common/webfont.js" type="text/javascript"></script>
+    <!-- / -->
+
+</head>
+<body style="margin:50px">
+
+<a href="default.htm">Default Example</a> | More Examples | <a href="docs.htm">Documentation</a> | <a href="docs_aspnet.htm">ASP.NET Documentation</a> | <a href="default_aspnet.aspx">ASP.NET Example</a>
+
+
+<h2>Example 1 (Complete Buttons)</h2>
+
+<textarea id="txtContent1" name="txtContent" rows=4 cols=30>
+</textarea>
+
+<script type="text/javascript" language="javascript">
+
+    var oEdit1 = new InnovaEditor("oEdit1");
+
+    /* Set custom size. Use 100% for responsive width */
+    oEdit1.width = 750;
+    oEdit1.height = 400;
+
+    /*Add Custom Buttons */
+    oEdit1.arrCustomButtons.push(["MyCustomButton", "alert('Custom Command here..')", "Caption..", "btnCustom1.gif"]);
+
+    /*Toolbar Buttons Configuration*/
+    oEdit1.groups = [
+        ["group1", "", ["FontName", "FontSize", "Superscript", "ForeColor", "BackColor", "FontDialog", "BRK", "Bold", "Italic", "Underline", "Strikethrough", "TextDialog","CompleteTextDialog", "Styles", "RemoveFormat"]],
+        ["group2", "", ["JustifyLeft", "JustifyCenter", "JustifyRight", "Paragraph", "BRK", "Bullets", "Numbering", "Indent", "Outdent"]],
+        ["group3", "", ["Table","TableDialog", "Emoticons", "FlashDialog", "BRK", "LinkDialog", "ImageDialog", "YoutubeDialog"]],
+        ["group4", "", ["InternalLink", "CharsDialog", "Line", "BRK", "CustomObject", "CustomTag", "MyCustomButton"]],
+        ["group5", "", ["SearchDialog", "SourceDialog", "BRK", "Undo", "Redo", "FullScreen"]]
+        ];
+
+    /*Define "InternalLink" & "CustomObject" buttons */
+    oEdit1.cmdInternalLink = "modalDialog('my_custom_dialog.htm',650,350)"; //Command to open your custom link browser.
+    oEdit1.cmdCustomObject = "modalDialog('my_custom_dialog.htm',650,350)"; //Command to open your custom file browser.
+
+    /*Enable Custom File Browser:
+
+        Important Note:
+        FILE BROWSER/MANAGER IS A FREE ADD-ON INCLUDED IN INNOVASTUDIO LIVE EDITOR PACKAGE (in assetmanager folder).
+        SINCE IT IS A STANDALONE APPLICATION AND CAN BE ACCESSED DIRECTLY FROM BROWSER,
+        YOU WILL NEED TO SECURE IT BY ADDING USER CHECK/AUTHENTICATION TO:
+
+	        - assetmanager/asset.[aspx/asp/php]
+
+        SECURITY CHECK MUST ALSO BE ADDED TO OTHER FILES IN FILE BROWSER FOLDER SUCH AS:
+
+	        - assetmanager/server/delfile.[ashx/asp/php]
+	        - assetmanager/server/delfolder.[ashx/asp/php]
+	        - assetmanager/server/newfolder.[ashx/asp/php]
+	        - assetmanager/server/upload.[ashx/asp/php]
+
+        oEdit1.fileBrowser = "/assetmanager/asset.php";
+
+    */
+
+    /* Enable Features */
+    oEdit1.enableFlickr = true;
+    oEdit1.enableCssButtons = true;
+    oEdit1.enableTableAutoformat = true;
+
+    /*Define "CustomTag" dropdown */
+    oEdit1.arrCustomTag = [["First Name", "{%first_name%}"],
+        ["Last Name", "{%last_name%}"],
+        ["Email", "{%email%}"]]; //Define custom tag selection
+
+    /*Apply stylesheet for the editing content*/
+    oEdit1.css = "styles/default.css";
+
+    /*Render the editor*/
+    oEdit1.REPLACE("txtContent1");
+
+</script>
+
+<h2>Example 2 (Complete Buttons) with Tabs</h2>
+
+<textarea id="txtContent2" name="txtContent2" rows=4 cols=30>
+</textarea>
+
+<script type="text/javascript" language="javascript">
+
+    var oEdit2 = new InnovaEditor("oEdit2");
+
+    /* Set custom size. Use 100% for responsive width */
+    oEdit2.width = 750;
+    oEdit2.height = 400;
+
+	oEdit2.toolbarMode = 1; //activate tab toolbar
+
+    /*Add Custom Buttons */
+    oEdit2.arrCustomButtons.push(["MyCustomButton", "alert('Custom Command here..')", "Caption..", "btnCustom1.gif"]);
+
+    /*Add Custom Dropdown Buttons */
+	var dropdownItems = [
+		["dropdown1", "alert('test');", "Dropdown Item 1"],
+		["dropdown2", "modalDialog('somedialog1.htm',500,223,'My Dialog1');", "Dropdown Item 2"],
+		["dropdown3", "modalDialog('somedialog2.htm',800,453,'My Dialog2');", "Dropdown Item 3"]
+	];
+	oEdit2.arrCustomButtons.push(["MyDropdownButton", "", "Caption..", "btnCustom2.gif", 0, dropdownItems]);
+
+
+    /*Toolbar Buttons Configuration*/
+    oEdit2.groups = [
+        ["group1", "", ["FontName", "FontSize", "Superscript", "ForeColor", "BackColor", "FontDialog", "BRK", "Bold", "Italic", "Underline", "Strikethrough", "TextDialog", "Styles", "RemoveFormat"]],
+        ["group2", "", ["JustifyLeft", "JustifyCenter", "JustifyRight", "Paragraph", "BRK", "Bullets", "Numbering", "Indent", "Outdent"]],
+        ["group3", "", ["Table" ,"TableDialog", "Emoticons", "FlashDialog", "BRK", "LinkDialog", "BookmarkDialog", "ImageDialog", "YoutubeDialog"]],
+        ["group4", "", ["InternalLink", "CharsDialog", "Line", "BRK", "CustomObject", "CustomTag", "MyCustomButton", "MyDropdownButton"]],
+        ["group5", "", ["SearchDialog", "SourceDialog", "BRK", "Undo", "Redo", "FullScreen", "Preview"]]
+        ];
+
+	oEdit2.tabs = [
+		["tabCommon", "Common", ["group1","group2","group3", "group5"]],
+		["tabAdvanced", "Advanced", ["group4"]]
+	];
+
+    /*Define "InternalLink" & "CustomObject" buttons */
+    oEdit2.cmdInternalLink = "modalDialog('my_custom_dialog.htm',650,350)"; //Command to open your custom link browser.
+    oEdit2.cmdCustomObject = "modalDialog('my_custom_dialog.htm',650,350)"; //Command to open your custom file browser.
+
+    /*Enable Custom File Browser:
+
+        Important Note:
+        FILE BROWSER/MANAGER IS A FREE ADD-ON INCLUDED IN INNOVASTUDIO LIVE EDITOR PACKAGE (in assetmanager folder).
+        SINCE IT IS A STANDALONE APPLICATION AND CAN BE ACCESSED DIRECTLY FROM BROWSER,
+        YOU WILL NEED TO SECURE IT BY ADDING USER CHECK/AUTHENTICATION TO:
+
+	        - assetmanager/asset.[aspx/asp/php]
+
+        SECURITY CHECK MUST ALSO BE ADDED TO OTHER FILES IN FILE BROWSER FOLDER SUCH AS:
+
+	        - assetmanager/server/delfile.[ashx/asp/php]
+	        - assetmanager/server/delfolder.[ashx/asp/php]
+	        - assetmanager/server/newfolder.[ashx/asp/php]
+	        - assetmanager/server/upload.[ashx/asp/php]
+
+        oEdit2.fileBrowser = "/assetmanager/asset.php";
+
+    */
+
+    /* Enable Features */
+    oEdit2.enableFlickr = true;
+    oEdit2.enableCssButtons = true;
+    oEdit2.enableTableAutoformat = true;
+
+    /*Define "CustomTag" dropdown */
+    oEdit2.arrCustomTag = [["First Name", "{%first_name%}"],
+        ["Last Name", "{%last_name%}"],
+        ["Email", "{%email%}"]]; //Define custom tag selection
+
+    /*Apply stylesheet for the editing content*/
+    oEdit2.css = "styles/default.css";
+
+    /*Render the editor*/
+    oEdit2.REPLACE("txtContent2");
+	
+</script>
+
+</body>
+</html>

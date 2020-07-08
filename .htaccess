@@ -1,0 +1,37 @@
+RewriteEngine on
+RewriteRule ^sitemap/list_([0-9]+).xml$ user-uploads/sitemap/list_$1.xml [L]
+
+RewriteRule ^sitemap.xml$ user-uploads/sitemap.xml [L]
+
+<IfModule mod_headers.c>
+	Header unset ETag
+</IfModule>
+FileETag None
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    Options -Multiviews
+    RewriteEngine on
+	#satisfy any
+    RewriteBase /
+	RewriteRule ^cache/(.*)/images/(.*) /images/$2 [L]
+	RewriteRule ^cache/(.*)/fonts/(.*) /fonts/$2 [L]
+	RewriteRule ^(scripts|user-uploads/text-editor|user-uploads/sitemap.xml|user-uploads/sitemap) - [L]
+    RewriteRule    ^$ public/    [L]
+    RewriteRule    (.*) public/$1    [L]
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType image/svg+xml "access 1 month"
+ExpiresByType text/css "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 2 days"
+</IfModule>

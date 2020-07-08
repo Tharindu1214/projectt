@@ -1,0 +1,1 @@
+a:1:{i:350;a:10:{s:10:"prodcat_id";i:350;s:12:"prodcat_name";s:16:"Leather Products";s:16:"prodrootcat_code";s:6:"000350";s:21:"prodcat_content_block";s:0:"";s:14:"prodcat_active";i:1;s:14:"prodcat_parent";i:0;s:12:"prodcat_code";s:7:"000350_";s:17:"prodcat_ordercode";s:6:"000014";s:19:"isLastChildCategory";i:1;s:8:"children";a:0:{}}}

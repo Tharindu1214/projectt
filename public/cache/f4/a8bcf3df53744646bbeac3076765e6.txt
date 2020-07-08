@@ -1,0 +1,57 @@
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div class="section__heading">
+                        <h2>Featured Shops</h2>
+                    </div>
+                                    </div>
+                    <div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+        <div class="featured-item">
+         <div class="featured_inner p-2 pt-4 pb-4">
+                 <div class="featured_logo mt-2 mb-3"><img src="/image/shop-logo/5/1/THUMB/0" alt="The OMG Box"></div>
+                 <div class="featured_detail">
+                     <div class="featured_name"><a href="/theomgbox">The OMG Box</a></div>
+                     <div class="featured_location">Colombo, Sri Lanka</div>
+                 </div>
+
+             <div class="featured_footer mt-3">
+                                  <a href="/theomgbox" class="btn btn--primary" tabindex="0">Shop Now</a>
+             </div>
+         </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+        <div class="featured-item">
+         <div class="featured_inner p-2 pt-4 pb-4">
+                 <div class="featured_logo mt-2 mb-3"><img src="/image/shop-logo/8/1/THUMB/0" alt="Gemini Store"></div>
+                 <div class="featured_detail">
+                     <div class="featured_name"><a href="/gemini-store">Gemini Store</a></div>
+                     <div class="featured_location">Colombo, Sri Lanka</div>
+                 </div>
+
+             <div class="featured_footer mt-3">
+                                  <a href="/gemini-store" class="btn btn--primary" tabindex="0">Shop Now</a>
+             </div>
+         </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+        <div class="featured-item">
+         <div class="featured_inner p-2 pt-4 pb-4">
+                 <div class="featured_logo mt-2 mb-3"><img src="/image/shop-logo/10/1/THUMB/0" alt="Embracelets_lk"></div>
+                 <div class="featured_detail">
+                     <div class="featured_name"><a href="/embracelets-lk">Embracelets_lk</a></div>
+                     <div class="featured_location">Colombo, Sri Lanka</div>
+                 </div>
+
+             <div class="featured_footer mt-3">
+                                  <a href="/embracelets-lk" class="btn btn--primary" tabindex="0">Shop Now</a>
+             </div>
+         </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </section>
+        

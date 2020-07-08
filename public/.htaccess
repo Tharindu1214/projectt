@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks
+RewriteEngine on
+#RewriteBase /
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.nevour.com/$1 [R,L]
+
+RewriteRule ^admin$ admin.php [PT,L]
+RewriteRule ^admin/(.*)$ admin.php?url=$1 [PT,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?url=$1 [PT,L,QSA]
+
+#RewriteCond %{HTTP_HOST} nevour\.com [NC]
+
+
+
+</IfModule>

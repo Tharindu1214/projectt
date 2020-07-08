@@ -1,0 +1,7 @@
+.wishlist_items--css .checkbox {
+    font-size: inherit;
+}
+
+.wishlist_items--css .checkbox input {
+    margin: 0;
+}

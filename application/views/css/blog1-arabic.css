@@ -1,0 +1,16 @@
+.form-subscribe input[type="text"] {
+	border-radius: 0px 50px 50px 0px;
+}
+
+.form-subscribe input[type="submit"] {
+	border-radius: 50px 0px 0px 50px;
+}
+
+.post__detail h1,
+.post__detail h2,
+.post__detail h3,
+.post__detail h4,
+.post__detail h5,
+.post__detail h6 {
+	text-align: right;
+}

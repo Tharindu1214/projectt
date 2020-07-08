@@ -1,0 +1,21 @@
+.construction-message{
+	text-align: center;
+	padding: 3rem 0;
+	color:var(--first-color);
+}
+
+.construction-message h1{
+	color:var(--first-color);
+	font-weight: 400;
+}
+
+.construction-message h6{
+	color:var(--body-color);
+}
+
+.construction-message svg{
+	max-width: 400px;
+	margin: 1.5rem;
+	width: 250px;
+	height: 250px;
+}

@@ -1,0 +1,24 @@
+.box--scroller {
+	max-height: 200px;
+	overflow: auto;
+}
+
+.box--scroller ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.box--scroller ul li {
+	padding: 5px 0;
+}
+
+.not-allowed {
+	background: #ededed;
+	color: #888;
+	cursor: not-allowed !important;
+}
+
+.formActions-css {
+	display: none !important;
+}
